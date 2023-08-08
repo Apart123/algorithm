@@ -22,6 +22,8 @@
  * @param {Function[]} functions
  * @return {Function}
  */
+
+// 1
 var compose = function(functions) {
 	return function(x) {
         while(functions.length !== 0){
@@ -31,6 +33,17 @@ var compose = function(functions) {
         return x;
     }
 };
+
+// 2
+// var compose = function(functions) {
+// 	return function(x) {
+//         while(functions.length !== 0){
+//             let func = functions.pop();
+//             x = func(x);
+//         }
+//         return x;
+//     }
+// };
 
 
 const fn = compose([x => x + 1, x => 2 * x])
